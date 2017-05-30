@@ -1,0 +1,40 @@
+<div class="container">
+  <h3>Tickets Cerrados</h3>
+
+  <table class="table">
+    <thead>
+      <th>Nombre</th>
+      <th>Descripcion</th>
+      <th>Usuario</th>
+      <th>tipo</th>
+      <th>Categoria</th>
+      <th>Fecha Abierto</th>
+      <th>Estado</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </thead>
+    <tbody ng-repeat="ticket in closedTicketsCtrl.closedTickets">
+      <td ng-hide="closedTicketsCtrl.edit">{{ticket.nombre}}</td>
+      <td ng-show="closedTicketsCtrl.edit"></td>
+      <td ng-hide="closedTicketsCtrl.edit">{{ticket.descripcion}}</td>
+      <td ng-show="closedTicketsCtrl.edit"></td>
+      <td ng-hide="closedTicketsCtrl.edit">{{ticket.user}}</td>
+      <td ng-show="closedTicketsCtrl.edit"></td>
+      <td ng-hide="closedTicketsCtrl.edit">{{ticket.tipo}}</td>
+      <td ng-show="closedTicketsCtrl.edit"></td>
+      <td ng-hide="closedTicketsCtrl.edit">{{ticket.categoria}}</td>
+      <td ng-show="closedTicketsCtrl.edit"></td>
+      <td ng-hide="closedTicketsCtrl.edit">{{ticket.fechaAbierto | date:'medium'}}</td>
+      <td ng-show="closedTicketsCtrl.edit"></td>
+      <td ng-hide="closedTicketsCtrl.edit">{{ticket.estado}}</td>
+      <td ng-show="closedTicketsCtrl.edit"><input type="text" ng-model="ticket.estado"></td>
+      <td><a ng-click="closedTicketsCtrl.editTicket(ticket)" class="trash"><span class="fa fa-edit fa-1x"></span></a></td>
+      <td><a ng-click="closedTicketsCtrl.updateTicket(ticket)" class="trash"><span class="fa fa-check fa-1x"></span></a></td>
+      <td><a ng-click="closedTicketsCtrl.deleteTicket(ticket)" class="trash"><span class="fa fa-trash fa-1x"></span></a></td>
+    </tbody>
+  </table>
+
+
+
+</div>

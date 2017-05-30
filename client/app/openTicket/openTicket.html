@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="col-sm-6">
+    <h3>Nuevo Ticket</h3><br>
+    <div class="form-group">
+      <label for="description" >Descripcion corta:</label>
+      <input type="text" class="form-control" id="description" ng-model="openTicketCtrl.short">
+      <label for="area" >Descripcion</label>
+      <textarea class="form-control" rows="5" id="area" ng-model="openTicketCtrl.long"></textarea><br>
+      <button  class="btn btn-default" ng-click="openTicketCtrl.sendTicket()">Enviar</button>
+      <input type="text" ng-model="openTicketCtrl.userName" ng-value=openTicketCtrl.user.name>
+      {{openTicketCtrl.userName}}
+
+      </div>
+  </div>
+  <div class="col-sm-6"><br><br><br><br><br>
+    <div class="form-control">
+      <label for="cat">Categoria</label>
+      <select class="form-control" id="cat" ng-options="c for c in openTicketCtrl.categoryList" ng-model="openTicketCtrl.category">
+
+      </select>
+
+      <label for="tipo">Tipo</label>
+      <select class="form-control" id="tipo" ng-options="t for t in openTicketCtrl.typeList"  ng-model="openTicketCtrl.type">
+
+      </select>
+    </div>
+
+  </div>
+
+</div>
